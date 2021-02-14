@@ -34,8 +34,8 @@ func (b *Buffer) AppendString(value string) {
 	b.bs = append(b.bs, value...)
 }
 
-// AppendLeftJustifiedString AFAIRE.
-func (b *Buffer) AppendLeftJustifiedString(s string, r byte, size int) {
+// AppendLJString AFAIRE.
+func (b *Buffer) AppendLJString(s string, r byte, size int) {
 	if len(s) < size {
 		b.AppendString(s)
 		b.AppendString(strings.Repeat(string(r), size-len(s)))
@@ -44,8 +44,8 @@ func (b *Buffer) AppendLeftJustifiedString(s string, r byte, size int) {
 	}
 }
 
-// AppendRightJustifiedString AFAIRE.
-func (b *Buffer) AppendRightJustifiedString(s string, r byte, size int) {
+// AppendRJString AFAIRE.
+func (b *Buffer) AppendRJString(s string, r byte, size int) {
 	if len(s) < size {
 		b.AppendString(strings.Repeat(string(r), size-len(s)))
 		b.AppendString(s)
